@@ -7,9 +7,9 @@ set -o errexit
 echo "Installing gems..."
 bundle install
 
-# Setup the database
-echo "Setting up the database..."
-bundle exec rails db:setup
+## Setup the database
+#echo "Setting up the database..."
+#bundle exec rails db:setup
 
 # Run migrations
 echo "Running migrations..."
