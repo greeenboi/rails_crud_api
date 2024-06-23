@@ -84,7 +84,7 @@ test:
 #
 production:
   <<: *default
-  database: myfriends_development
+  database: myfriends_production
   adapter: postgresql
   encoding: unicode
   pool: 5
