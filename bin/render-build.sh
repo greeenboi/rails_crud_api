@@ -1,7 +1,22 @@
 #!/usr/bin/env bash
-# exit on error
+
+# Exit on error
 set -o errexit
 
+# Install necessary gems
+echo "Installing gems..."
 bundle install
-bundle exec rails assets:precompile
-bundle exec rails assets:clean
+
+# Setup the database
+echo "Setting up the database..."
+bundle exec rails db:setup
+
+# Run migrations
+echo "Running migrations..."
+bundle exec rails db:migrate
+
+# Seed the database
+echo "Seeding the database..."
+bundle exec rails db:seed
+
+echo "Build completed successfully!"
